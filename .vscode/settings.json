@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "/home/durrjp/.pyenv/versions/3.8.1/bin/python3",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+}
