@@ -1,16 +1,31 @@
 from datetime import date
 
-class Llama:
+class Animal:
+    def __init__(self, name, species, food, chip_num):
+        self.name = name
+        self.species = species
+        self.food = food
+        self.__chip_number = chip_num
+        self.date_added = date.today()
+
+    def feed(self):
+        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+    
+    @property
+    def chip_number(self):
+        return self.__chip_number
+    
+    @chip_number.setter
+    def chip_number(self, num):
+        pass
+
+class Llama(Animal):
 
     def __init__(self, name, species, shift, food, chip_number):
         # Establish the properties of each animal
         # with a default value
-        self.name = name
-        self.species = species
+        super().__init__(name, species, food, chip_number)
         self.shift = shift
-        self.food = food
-        self.__chip_number = chip_number
-        self.date_added = date.today()
         self.walking = True
     # propert = getter
     @property
